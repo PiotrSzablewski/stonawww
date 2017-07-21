@@ -1,0 +1,58 @@
+<meta charset="UTF8" />
+
+<script>
+    
+var lista = [
+    'Michał Ruciński',
+    'Hania Rudy',
+    'Aneta Steichert',
+    'Michał Daszkowski',
+    'Marta Szymanowicz',
+    'Paulina Barczak',
+    'Przemysław Wiktorski',
+    'Tomasz Nowiński',
+    'Piotr Szablewski',
+    'Marcin Borek',
+    'Tomasz Wierzbowski',
+    'Dawid Megger',
+    'Radosław Dykty',
+    'Daniel Łazarek'
+];
+
+
+
+window.addEventListener('load', function(){
+    
+    document.getElementById('destiny').addEventListener('click', function(){
+        losuj();
+    });
+    
+});
+
+
+
+var byli = [];
+
+function losuj() {
+    
+    if (byli.length === lista.length) {
+        byli = [];
+        return alert('wszyscy już byli!');
+    }
+    
+    var rand = Math.floor(Math.random() * lista.length);
+        
+    if (byli.indexOf(rand) !== -1) {
+        return losuj();
+    }
+
+    byli.push(rand);
+
+    alert(lista[rand]);
+    
+}
+    
+</script>
+
+
+<input id="destiny" type="submit" value="Wylosuj skazańca" />
